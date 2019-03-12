@@ -15,6 +15,6 @@ TopbarComponent.$inject = ['$scope', '$rootScope'];
 
 angular.module('trelloManagementApp')
   .component('topbar', {
-    templateUrl: 'scripts/components/topbar.html',
+    templateUrl: '/scripts/components/topbar.html',
     controller: TopbarComponent
   });

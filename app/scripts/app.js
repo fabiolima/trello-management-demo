@@ -20,7 +20,6 @@ angular
   .config(function ($routeProvider, $locationProvider) {
 
     $locationProvider.html5Mode(true).hashPrefix('!');
-    // $routeProvider
 
     $routeProvider
       .when('/', {
@@ -49,6 +48,11 @@ angular
         templateUrl: 'views/board-lists.html',
         controller: 'BoardListsCtrl',
         controllerAs: 'boards-lists',
+
+        resolve: ['$location', function($location) {
+          const authorized = Trello.authorized();
+          if (!authorized) { $location.path('/login'); }
+        }]
       })
       .otherwise('/login');
   });

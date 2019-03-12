@@ -5,22 +5,23 @@
  * Show all user's boards.
  */
 angular.module('trelloManagementApp')
-  .controller('BoardsCtrl', ['$scope', '$location', '$rootScope', function ($scope, $location, $rootScope) {
+  .controller('BoardsCtrl', ['$scope', '$location', function ($scope, $location) {
 
     /**
      * Fetch all boards.
      */
-    this.$onInit = async function() {
-      const boards = await Trello.members.get('/me/boards');
-
-      $scope.boards = boards;
-      $scope.$apply();
-    }
+    this.$onInit = function() {
+      Trello.members.get('/me/boards')
+        .then(function(response) {
+          $scope.boards = response;
+          $scope.$apply();
+        });
+    };
 
     /**
      * Go to a single board page.
      */
     $scope.go = function(id) {
       $location.url('/board/'+id);
-    }
+    };
   }]);

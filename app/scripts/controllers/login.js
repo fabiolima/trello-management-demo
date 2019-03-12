@@ -22,7 +22,7 @@ angular.module('trelloManagementApp')
         success: this.authenticationSuccess,
         error: this.authenticationFailure
       });
-    }
+    };
 
     /**
      * Retrieve user info.
@@ -34,14 +34,14 @@ angular.module('trelloManagementApp')
           $rootScope.$emit('user.authenticated', response);
           $location.path('/boards');
           $scope.$apply();
-        })
-    }
+        });
+    };
 
     /**
      * Shows an message and stay on the login page.
      */
     $scope.authenticationFailure = function() {
-      console.log(a,b,c);
-    }
+      window.alert('Authentication failed.');
+    };
 
   }]);

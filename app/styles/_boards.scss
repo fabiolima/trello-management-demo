@@ -33,12 +33,36 @@
   overflow-y: auto;
 
   .panel {
+    &.panel-primary {
+      border-color: #46b8da;
+
+      .panel-heading {
+        border-color: #46b8da;
+      }
+    }
+
     .panel-heading {
+      padding: 15px;
+      font-size: 16px;
       background-color: #46b8da;
+      display: flex;
+
+      .title {
+        flex: 1;
+      }
+
+      .action {
+        a {
+          color: #fff;
+        }
+      }
     }
   }
 }
 
+/**
+ * Board animations.
+ **/
 .board.ng-enter,
 .board.ng-leave {
   transition: all ease 400ms;
@@ -51,11 +75,6 @@
     }
   };
 }
-
-.board.ng-enter,
-.board.ng-leave.ng-leave-active {
-}
-
 
 .board.ng-leave,
 .board.ng-enter.ng-enter-active {

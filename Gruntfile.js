@@ -131,24 +131,24 @@ module.exports = function (grunt) {
     },
 
     // Make sure there are no obvious mistakes
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      all: {
-        src: [
-          'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js'
-        ]
-      },
-      test: {
-        options: {
-          jshintrc: 'test/.jshintrc'
-        },
-        src: ['test/spec/{,*/}*.js']
-      }
-    },
+    // jshint: {
+    //   options: {
+    //     jshintrc: '.jshintrc',
+    //     reporter: require('jshint-stylish')
+    //   },
+    //   all: {
+    //     src: [
+    //       'Gruntfile.js',
+    //       '<%= yeoman.app %>/scripts/{,*/}*.js'
+    //     ]
+    //   },
+    //   test: {
+    //     options: {
+    //       jshintrc: 'test/.jshintrc'
+    //     },
+    //     src: ['test/spec/{,*/}*.js']
+    //   }
+    // },
 
     // Make sure code styles are up to par
     jscs: {
@@ -492,14 +492,14 @@ module.exports = function (grunt) {
     grunt.task.run(['serve:' + target]);
   });
 
-  grunt.registerTask('test', [
-    'clean:server',
-    'wiredep',
-    'concurrent:test',
-    'postcss',
-    'connect:test',
-    'karma'
-  ]);
+  // grunt.registerTask('test', [
+  //   'clean:server',
+  //   'wiredep',
+  //   'concurrent:test',
+  //   'postcss',
+  //   'connect:test',
+  //   'karma'
+  // ]);
 
   grunt.registerTask('build', [
     'clean:dist',
@@ -520,9 +520,9 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
-    'newer:jscs',
-    'test',
+    // 'newer:jshint',
+    // 'newer:jscs',
+    // 'test',
     'build'
   ]);
 };

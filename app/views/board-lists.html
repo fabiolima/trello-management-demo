@@ -2,12 +2,7 @@
   <h3 class="section-title">Lists of {{ currentBoard.name }} board</h3>
   <ul class="lists">
     <li class="list" ng-repeat="list in lists">
-      <div class="panel panel-primary">
-        <div class="panel-heading">{{ list.name }}</div>
-        <div class="panel-body">
-          <cards-list list-id="{{ list.id }}"></cards-list>
-        </div>
-      </div>
+      <cards-list list-id="{{ list.id }}" list-name="{{ list.name }}"></cards-list>
     </li>
   </ul>
 </section>
