@@ -1,0 +1,64 @@
+.boards-page {
+  height: 100%;
+}
+
+.boards {
+  list-style: none;
+  height: 100%;
+  margin: 0;
+  padding: 1em;
+  overflow-y: auto;
+
+  .board {
+    border-radius: 4px;
+    background-color: #46b8da;
+
+    &:not(:last-child) {
+      margin-bottom: .5em;
+    }
+
+    .title {
+      display: inline-block;
+      padding: 15px;
+      color: white;
+    }
+  }
+}
+
+.lists {
+  list-style: none;
+  height: 88%;
+  margin: 0;
+  padding: 1em;
+  overflow-y: auto;
+
+  .panel {
+    .panel-heading {
+      background-color: #46b8da;
+    }
+  }
+}
+
+.board.ng-enter,
+.board.ng-leave {
+  transition: all ease 400ms;
+
+  @for $i from 1 through 20 {
+    &:nth-of-type(#{$i}) {
+      opacity: 0;
+      transform: translateX(30px);
+      transition-delay: calc(#{$i} * 100ms);
+    }
+  };
+}
+
+.board.ng-enter,
+.board.ng-leave.ng-leave-active {
+}
+
+
+.board.ng-leave,
+.board.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+}
