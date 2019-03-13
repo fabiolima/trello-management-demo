@@ -6,7 +6,7 @@
   display: flex;
 
   .name {
-    padding: 7px 0;
+    padding: 7px 15px 7px 0;
   }
 
   .labels {
@@ -27,7 +27,7 @@
   }
 
   .actions {
-    width: 100px;
+    width: 80px;
     display: flex;
     justify-content: space-between;
 
@@ -37,6 +37,34 @@
   }
 }
 
+.comments {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .comment {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+
+    .author {
+      font-style: italic;
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .message {
+      padding-bottom: 10px;
+    }
+
+    &:not(:last-child) {
+      .message {
+        border-bottom: 1px dashed;
+      }
+    }
+  }
+}
 
 /**
  * Card form animations.

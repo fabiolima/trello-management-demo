@@ -4,7 +4,7 @@
  * Card Component
  * Displays the card info and action buttons to edit, view and delete.
  */
-function CardComponent($scope) {
+function CardComponent($scope, $rootScope) {
 
   /**
    * Local "$scope".
@@ -78,12 +78,16 @@ function CardComponent($scope) {
       });
     }
   };
+
+  $ctrl.showDetails = function() {
+    $rootScope.$emit('modal.open', $ctrl.card);
+  }
 }
 
 /**
  * Inject component dependencies.
  */
-CardComponent.$inject = ['$scope'];
+CardComponent.$inject = ['$scope', '$rootScope'];
 
 
 /**
