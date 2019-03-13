@@ -10,7 +10,9 @@ A single page application to demonstrate Trello client.js use.
 ## Build & development
 
 Run `bower install` to install app dependecies.
+
 Run `npm install` to install grunt-cli dependencies.
+
 Run `grunt serve` to serve the application.
 
 ## Features
