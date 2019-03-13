@@ -1,6 +1,7 @@
 # Trello Management Demo
 
 A single page application to demonstrate Trello client.js use.
+Live Demo: https://fabiolima.github.io/trello-management-demo/
 
 ## Dependencies
 - `bower`
