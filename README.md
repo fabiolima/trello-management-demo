@@ -1,12 +1,25 @@
-# trello-management
+# Trello Management Demo
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.16.0.
+A single page application to demonstrate Trello client.js use.
+
+## Dependencies
+- `bower`
+- `npm`
+- `gem compass`
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `bower install` to install app dependecies.
+Run `npm install` to install grunt-cli dependencies.
+Run `grunt serve` to serve the application.
 
-## Testing
+## Features
 
-Running `grunt test` will run the unit tests with karma.
+- Trello Authentication.
+- Board's list.
+- Card's list.
+- Create, update, delete cards.
+
+## To-do
+- Add field labels, members and checklist to create and update form card.
+- UI improvements.
