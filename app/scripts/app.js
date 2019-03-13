@@ -1,12 +1,7 @@
 'use strict';
 
 /**
- * @ngdoc overview
- * @name trelloManagementApp
- * @description
- * # trelloManagementApp
- *
- * Main module of the application.
+ *s Main module of the application.
  */
 angular
   .module('trelloManagementApp', [
@@ -19,21 +14,15 @@ angular
   ])
   .config(function ($routeProvider, $locationProvider) {
 
-    // $locationProvider.html5Mode(true);
 
     $routeProvider
-      .when('!#/', {
-        controllerAs: 'root',
-        resolve: ['$location', function($location) {
-          console.log('alo');
-          $location.url('/#!/cusujjo');
-        }]
-      })
+
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
         controllerAs: 'login',
       })
+
       .when('/boards', {
         templateUrl: 'views/boards.html',
         controller: 'BoardsCtrl',
@@ -61,9 +50,14 @@ angular
           }
         },
       })
+
       .otherwise('/login');
   })
-  .factory('authFactory',function($location) {
+
+  /**
+   * Route guard.
+   */
+  .factory('authFactory', function($location) {
     return {
       authorized: function() {
         if (Trello.authorized()) {
