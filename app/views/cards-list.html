@@ -30,12 +30,11 @@
     </form>
     <!-- END CARD FORM -->
 
+    <span class="empty" ng-if="!$ctrl.cards.length"> This list is empty :( </span>
 
     <!-- CARDS -->
-    <card ng-repeat="card in $ctrl.cards" data="{{ card }}" refresh="$ctrl.refresh()" />
+    <card ng-repeat="card in $ctrl.cards" data="{{ card }}" refresh="$ctrl.refresh()"></card>
     <!-- END CARDS -->
-
-    <span class="empty" ng-if="$ctrl.cards.length < 1"> This list is empty :( </span>
 
   </div>
 </div>
