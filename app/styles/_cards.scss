@@ -27,9 +27,9 @@
   }
 
   .actions {
-    width: 120px;
+    width: 100px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 
     .action {
       cursor: pointer;
@@ -42,10 +42,15 @@
  * Card form animations.
  **/
 .card-form {
+  flex: 1;
   padding: 1em;
   border: 1px solid #d3d3d3;
   border-radius: 4px;
   margin-bottom: 1em;
+
+  .fa-spin {
+    margin-right: 5px;
+  }
 }
 
 .card-form.ng-enter,
@@ -65,6 +70,3 @@
   opacity: 1;
   transform: translateX(0);
 }
-
-
-  

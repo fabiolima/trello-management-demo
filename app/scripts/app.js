@@ -19,13 +19,14 @@ angular
   ])
   .config(function ($routeProvider, $locationProvider) {
 
-    $locationProvider.html5Mode(true).hashPrefix('!');
+    // $locationProvider.html5Mode(true);
 
     $routeProvider
-      .when('/', {
+      .when('!#/', {
         controllerAs: 'root',
         resolve: ['$location', function($location) {
-          $location.path('/login');
+          console.log('alo');
+          $location.url('/#!/cusujjo');
         }]
       })
       .when('/login', {
@@ -38,10 +39,13 @@ angular
         controller: 'BoardsCtrl',
         controllerAs: 'boards',
 
-        resolve: ['$location', function($location) {
-          const authorized = Trello.authorized();
-          if (!authorized) { $location.path('/login'); }
-        }]
+        resolve: {
+          'authorize': function(authFactory, $location) {
+            if (authFactory.authorized()) {
+              return true;
+            }
+          }
+        },
       })
 
       .when('/boards/:id', {
@@ -49,10 +53,24 @@ angular
         controller: 'BoardListsCtrl',
         controllerAs: 'boards-lists',
 
-        resolve: ['$location', function($location) {
-          const authorized = Trello.authorized();
-          if (!authorized) { $location.path('/login'); }
-        }]
+        resolve: {
+          'authorize': function(authFactory, $location) {
+            if (authFactory.authorized()) {
+              return true;
+            }
+          }
+        },
       })
       .otherwise('/login');
+  })
+  .factory('authFactory',function($location) {
+    return {
+      authorized: function() {
+        if (Trello.authorized()) {
+          return true;
+        } else {
+          return $location.path('/login');
+        }
+      }
+    }
   });

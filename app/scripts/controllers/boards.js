@@ -5,7 +5,7 @@
  * Show all user's boards.
  */
 angular.module('trelloManagementApp')
-  .controller('BoardsCtrl', ['$scope', '$location', function ($scope, $location) {
+  .controller('BoardsCtrl', ['$scope', '$location', '$rootScope', function ($scope, $location, $rootScope) {
 
     /**
      * Fetch all boards.
@@ -14,6 +14,7 @@ angular.module('trelloManagementApp')
       Trello.members.get('/me/boards')
         .then(function(response) {
           $scope.boards = response;
+          $rootScope.$emit('board.selected', null);
           $scope.$apply();
         });
     };

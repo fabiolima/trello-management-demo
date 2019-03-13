@@ -1,5 +1,4 @@
 <section ng-controller="BoardListsCtrl" class="boards-page">
-  <h3 class="section-title">Lists of {{ currentBoard.name }} board</h3>
   <ul class="lists">
     <li class="list" ng-repeat="list in lists">
       <cards-list list-id="{{ list.id }}" list-name="{{ list.name }}"></cards-list>

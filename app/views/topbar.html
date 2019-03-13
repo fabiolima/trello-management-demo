@@ -1,0 +1,4 @@
+<header class="flex-row container header">
+  <h1 class="title">{{ $ctrl.board.name || 'Trello Management'  }}</h1>
+  <span ng-if="$ctrl.user">Welcome, {{ $ctrl.user.fullName }} </span>
+</header>
