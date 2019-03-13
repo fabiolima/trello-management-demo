@@ -79,6 +79,9 @@ function CardComponent($scope, $rootScope) {
     }
   };
 
+  /**
+   * Emit modal open event.
+   */
   $ctrl.showDetails = function() {
     $rootScope.$emit('modal.open', $ctrl.card);
   }

@@ -8,7 +8,7 @@ angular.module('trelloManagementApp')
   .controller('BoardListsCtrl', ['$scope', '$location', '$rootScope', '$routeParams', function ($scope, $location, $rootScope, $routeParams) {
 
     /**
-     * Fetch all boards.
+     * Fetch all board lists.
      */
     this.$onInit = function() {
       Trello.boards.get($routeParams.id, { lists: 'all' })

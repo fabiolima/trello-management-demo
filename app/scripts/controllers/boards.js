@@ -23,6 +23,6 @@ angular.module('trelloManagementApp')
      * Go to a single board page.
      */
     $scope.go = function(id) {
-      $location.url('/board/'+id);
+      $location.url('/board/' + id);
     };
   }]);

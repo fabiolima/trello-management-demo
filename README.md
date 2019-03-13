@@ -21,5 +21,5 @@ Run `grunt serve` to serve the application.
 - Create, update, delete cards.
 
 ## To-do
-- Add field labels, members and checklist to create and update form card.
+- Add labels, members and checklist to create and update form card.
 - UI improvements.
